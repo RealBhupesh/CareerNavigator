@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anushka Career Navigator - Profile</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+      label { display: block; margin-top: .5rem; }
+      input, textarea { width: 320px; max-width: 100%; padding: .5rem; }
+      .notice { margin-top: 1rem; color: green; }
+    </style>
+  </head>
+  <body>
+    <h1>Profile</h1>
+    <form method="post">
+      <label>Name</label>
+      <input name="name" />
+      <label>Role</label>
+      <input name="role" />
+      <label>Skills (comma-separated)</label>
+      <input name="skills" />
+      <div style="margin-top: 1rem;">
+        <button type="submit">Save</button>
+        <a href="/" style="margin-left: 1rem;">Home</a>
+      </div>
+    </form>
+    {% if saved %}
+      <div class="notice">Saved! {{ data }}</div>
+      {% if analysis %}
+        <div class="notice">
+          <div><strong>Suggestions:</strong></div>
+          <ul>
+            {% for s in analysis.suggestions %}
+              <li>{{ s }}</li>
+            {% endfor %}
+          </ul>
+          {% if analysis.gaps and analysis.gaps|length > 0 %}
+            <div><strong>Focus gaps:</strong> {{ analysis.gaps|join(', ') }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </body>
+  </html>
+
+

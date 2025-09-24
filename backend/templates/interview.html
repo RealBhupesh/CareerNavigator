@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anushka Career Navigator - Interview</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+      textarea { width: 480px; height: 120px; max-width: 100%; }
+    </style>
+  </head>
+  <body>
+    <h1>Interview</h1>
+    <form method="post">
+      <label>Ask a question</label>
+      <input name="question" style="width: 480px; max-width: 100%;" />
+      <div style="margin-top: .5rem;">
+        <button type="submit">Get answer</button>
+        <a href="/" style="margin-left: 1rem;">Home</a>
+      </div>
+    </form>
+    {% if answer %}
+      <h3>Answer</h3>
+      <p>{{ answer }}</p>
+    {% endif %}
+  </body>
+  </html>
+
+

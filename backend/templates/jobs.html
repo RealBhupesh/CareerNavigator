@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anushka Career Navigator - Jobs</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+      .job { border-bottom: 1px solid #eee; padding: .5rem 0; }
+    </style>
+  </head>
+  <body>
+    <h1>Jobs</h1>
+    <a href="/">Home</a>
+    <div>
+    {% for job in jobs %}
+      <div class="job">
+        <strong>{{ job.title }}</strong> — {{ job.company }} ({{ job.location }})
+        <div>Relevance: {{ job.relevance }}%{% if job.overlap and job.overlap|length>0 %} — matches: {{ job.overlap|join(', ') }}{% endif %}</div>
+      </div>
+    {% endfor %}
+    </div>
+  </body>
+  </html>
+
+
