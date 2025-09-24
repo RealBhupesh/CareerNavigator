@@ -8,5 +8,6 @@
     { "source": "/pyapi/(.*)", "destination": "/api/index.py" }
   ],
   "env": {},
+  "version": 2,
   "buildCommand": "pip install -r requirements.txt"
 }
