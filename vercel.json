@@ -1,13 +1,12 @@
 {
   "functions": {
     "api/index.py": {
-      "runtime": "@vercel/python"
+      "runtime": "@vercel/python@3.11"
     }
   },
   "rewrites": [
     { "source": "/pyapi/(.*)", "destination": "/api/index.py" }
   ],
   "env": {},
-  "version": 2,
-  "buildCommand": "pip install -r requirements.txt"
+  "version": 2
 }
